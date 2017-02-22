@@ -21,8 +21,6 @@ function createBoard() {
 		//when a card is clicked the function isTwoCards will be executed
 		cardElement.addEventListener('click', isTwoCards);
 
-		//cardElement.innerHTML = '<img src="kingOfSpades.png" alt="King of Spades" />';
-
 	}
 }
 
@@ -32,13 +30,17 @@ function isMatch() {
 	} else {
 		alert ("Sorry, try again.");
 	}
+	//this.innerHTML='';
 }
 
-//I need to make the card flip on the 'click' event listener
-	//I have been able to get it to start flipped if I put it directly
-		//under the listener
-	//If I put it in the isTwoCards function, I get an error about cardElement
-
+// made to remove the innerHTML from this
+// function reset() {
+// if (this.getAttribute('data-card') === 'king') {
+// 		this.innerHTML = '';
+// 	} else {
+// 		this.innerHTML = '';
+// 	}
+// }
 
 //checks to see if there are cards in play
 function isTwoCards() {
@@ -46,12 +48,14 @@ function isTwoCards() {
 	//'this' hasn't been covered in this pre-work, but
 	//for now, just know it gives you access to the card the user clicked on
 	cardsInPlay.push(this.getAttribute('data-card'));
-
-	//cardElement.innerHTML = '<img src="kingOfSpades.png" alt="King of Spades" />';
-	//cardElement.innerHTML = '<img src="queenOfHearts.png" alt="Queen of Hearts"';
-
+	if (this.getAttribute('data-card') === 'king') {
+		this.innerHTML = '<img src="kingOfSpades.png" alt="King of Spades" />';
+	} else {
+		this.innerHTML = '<img src="queenOfHearts.png" alt="Queen of Hearts"/>';
+	}
 	if (cardsInPlay.length === 2) {
 		isMatch(cardsInPlay);
 		cardsInPlay = [];
 	}
 }
+createBoard();
