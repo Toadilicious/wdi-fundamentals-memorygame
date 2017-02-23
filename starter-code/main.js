@@ -16,31 +16,25 @@ function createBoard() {
 
 		var cardElement = document.createElement('div');
 		cardElement.className = 'card';
-		findGameBoard.appendChild(cardElement);
 		cardElement.setAttribute('data-card', cards[i]);
 		//when a card is clicked the function isTwoCards will be executed
 		cardElement.addEventListener('click', isTwoCards);
 
+		// append the card to the board
+		findGameBoard.appendChild(cardElement);
+	  //board.appendChild(cardElement);
+		//board.appendChild(cardElement);
 	}
-}
-
-function isMatch() {
-	if (cardsInPlay[0] === cardsInPlay[1]) {
-		alert ("You found a match!")
-	} else {
-		alert ("Sorry, try again.");
-	}
-	//this.innerHTML='';
 }
 
 // made to remove the innerHTML from this
 // function reset() {
-// if (this.getAttribute('data-card') === 'king') {
-// 		this.innerHTML = '';
-// 	} else {
-// 		this.innerHTML = '';
+// 	if (this.getAttribute('data-card') === 'king') {
+// 			this.innerHTML = '';
+// 		} else {
+// 			this.innerHTML = '';
+// 		}
 // 	}
-// }
 
 //checks to see if there are cards in play
 function isTwoCards() {
@@ -58,4 +52,18 @@ function isTwoCards() {
 		cardsInPlay = [];
 	}
 }
+
+//check for a match
+function isMatch() {
+	if (cardsInPlay[0] === cardsInPlay[1]) {
+		alert ("You found a match!")
+		//this.innerHTML='<img src="kingOfSpades.png" alt="King of Spades" />';
+
+	} else {
+		alert ("Sorry, try again.");
+	}
+	//reset();
+}
+
+
 createBoard();

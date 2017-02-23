@@ -64,11 +64,10 @@ footer {
 }
 
 img {
-	height: 200px;
-	width: 150px;
+	height: 201px;
+	width: 151px;
 	background-color: #ffff00;
 	border:1px rgb(0,0,0) solid;
-	border-radius: 10px;
+	border-radius: 12px;
 	float: left;
-	margin: 8%;
 }
