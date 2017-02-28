@@ -1,7 +1,7 @@
 console.log("JS file is connected to HTML! Woo!");
 
 // find how many elements have 'game-board as Id'
-var findGameBoard = document.getElementById('game-board');
+var board = document.getElementById('game-board');
 var cards = ['queen','queen','king','king'];
 var cardsInPlay = [];
 
@@ -21,20 +21,10 @@ function createBoard() {
 		cardElement.addEventListener('click', isTwoCards);
 
 		// append the card to the board
-		findGameBoard.appendChild(cardElement);
-	  //board.appendChild(cardElement);
-		//board.appendChild(cardElement);
+	  board.appendChild(cardElement);
+		board.appendChild(cardElement);
 	}
 }
-
-// made to remove the innerHTML from this
-// function reset() {
-// 	if (this.getAttribute('data-card') === 'king') {
-// 			this.innerHTML = '';
-// 		} else {
-// 			this.innerHTML = '';
-// 		}
-// 	}
 
 //checks to see if there are cards in play
 function isTwoCards() {
@@ -52,18 +42,26 @@ function isTwoCards() {
 		cardsInPlay = [];
 	}
 }
+var cardReset = [];
 
 //check for a match
 function isMatch() {
 	if (cardsInPlay[0] === cardsInPlay[1]) {
 		alert ("You found a match!")
-		//this.innerHTML='<img src="kingOfSpades.png" alt="King of Spades" />';
+		// console.log(cardsInPlay);
+		// console.log(cardsInPlay[0]);
+		// cardsInPlay[0].innerHTML='';
 
 	} else {
 		alert ("Sorry, try again.");
 	}
-	//reset();
-}
+	for(var x = 0; x<cards.length;x++) {
+		// console.log(cardReset);
+		// console.log(cards.length);
+		cardReset.push(document.getElementsByClassName('card'));
 
+		cardReset[x].innerHTML='';
+	}
+}
 
 createBoard();
