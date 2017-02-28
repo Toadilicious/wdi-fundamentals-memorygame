@@ -17,6 +17,7 @@
 
 h1 {
 	color: rgba(2,132,130,1);
+	font-family: 'orbitron',sans-serif;
 }
 
 h2 {
@@ -71,4 +72,11 @@ img {
 	border:1px rgb(0,0,0) solid;
 	border-radius: 12px;
 	float: left;
+}
+button {
+	width: 25%;
+	height: 45px;
+	margin:auto;
+	/*left: -45%;
+	right: -45%;*/
 }
